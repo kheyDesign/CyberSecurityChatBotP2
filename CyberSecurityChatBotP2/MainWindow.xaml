@@ -5,22 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CyberSecurityChatBotP2"
         mc:Ignorable="d"
-        Title="Maximus"  
-        Height="500" 
-        Width="700"
+        Title="Welcome Screen"  
+        Height="700" 
+        Width="1000"
         WindowStartupLocation="CenterScreen"
-        Background="#36454F">
+        Background="#121212">
 
     <!-- Please enter screen.(Welcome Screen)-->
     <Grid x:Name="WelcomeScreen" >
 
-        <!-- Welcome screen Controls -->
+        <Border Background="#36454F"
+        BorderBrush="White"
+        BorderThickness="2"
+        CornerRadius="15"
+         Height="500"
+        Width="450"
+        Margin="20,59,20,20">
+
+            <!-- Welcome screen Controls -->
         <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                    VerticalAlignment="Center" >
 
             <!--Bot name --> 
             <TextBlock Text="MAXIMUS"
-                       FontSize="32"
+                       FontSize="20"
                        FontWeight="Bold"
                        Foreground="White"
                        HorizontalAlignment="Center"
@@ -44,16 +52,7 @@
                        Margin="0,0,0,20"/>
 
             <!-- Maximus's Introduction -->
-            <Border Background="#36454F"
-                    BorderBrush="#7393B3"
-                    CornerRadius="15"
-                    Padding="15"
-                    Width="400"
-                    Height="300">
-
-                <StackPanel>
-
-                    <!-- Greeting -->
+             <!-- Greeting -->
                     <TextBlock Text="Hi There!"
                                FontSize="20"
                                FontWeight="Bold"
@@ -100,7 +99,7 @@
 
             </Border>
 
-        </StackPanel>
+      
     </Grid>
 
 </Window>
