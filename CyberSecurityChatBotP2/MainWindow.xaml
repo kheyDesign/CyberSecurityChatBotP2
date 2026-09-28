@@ -1,0 +1,106 @@
+﻿<Window x:Class="CyberSecurityChatBotP2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CyberSecurityChatBotP2"
+        mc:Ignorable="d"
+        Title="Maximus"  
+        Height="520" 
+        Width="700"
+        WindowStartupLocation="CenterScreen"
+        Background="#36454F">
+
+    <!-- Please enter screen.(Welcome Screen)-->
+    <Grid x:Name="WelcomeScreen" >
+
+        <!-- Welcome screen Controls -->
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <!--Bot name --> 
+            <TextBlock Text="MAXIMUS"
+                       FontSize="32"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,20,0,0"/>
+
+            <!--descriptive text-->
+            <TextBlock Text="Cyber Security Awareness Assistant"
+                       FontSize="16"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,5,0,15"/>
+
+            <!-- ASCII ART -->
+            <TextBlock x:Name="AsciiArtTextBlock"
+                       FontFamily="Consolas"
+                       FontSize="8"
+                       Foreground="#87CEEB"
+                       TextWrapping="NoWrap"
+                       TextAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <!-- Maximus's Introduction -->
+            <Border Background="#36454F"
+                    BorderBrush="#7393B3"
+                    CornerRadius="15"
+                    Padding="15"
+                    Width="400"
+                    Height="300">
+
+                <StackPanel>
+
+                    <!-- Greeting -->
+                    <TextBlock Text="Hi There!"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               Margin="0,10,0,0"/>
+
+                    <TextBlock Text="I am Maximus. Your Cyber Security Assistant."
+                               Foreground="White"
+                               FontSize="15"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Margin="0,5,0,0"/>
+
+                    <!-- Ask user for name. supports memory and bot remembering-->
+                    <TextBlock Text="Please enter your name:"
+                               Foreground="White"
+                               FontSize="16"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Margin="0,50,0,15"/>
+
+                    <!-- Lets user enter name -->
+                    <TextBox x:Name="NameTextBox"
+                             Height="30"
+                             Width="300"
+                             FontSize="16"
+                             HorizontalAlignment="Center"
+                             Margin="0,0,0,15"/>
+
+                    <!-- Lets user submit name -->
+                    <Button Content="Submit"
+                            Width="100"
+                            Height="30"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Background="#7393B3"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,15"
+                            Click="SubmitButton_Click"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </StackPanel>
+    </Grid>
+
+</Window>
