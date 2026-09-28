@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CyberSecurityChatBotP2"
         mc:Ignorable="d"
         Title="Maximus"  
-        Height="520" 
+        Height="500" 
         Width="700"
         WindowStartupLocation="CenterScreen"
         Background="#36454F">

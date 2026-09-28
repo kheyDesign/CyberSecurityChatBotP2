@@ -9,7 +9,7 @@ using System.Windows;
 //-------------------------------------------------------------------
 namespace CyberSecurityChatBotP2
 {
-  // Interaction logic for MainWindow.xaml
+    // logic for MainWindow / Wellcome screen
 
     public partial class MainWindow : Window
     {
@@ -34,7 +34,7 @@ namespace CyberSecurityChatBotP2
                                                                                     ";
 
 
-            //Play the welcome sound when the application starts
+            //Play the welcome sound. When the App starts.
             PlayWelcomeGreeting();
         }
 
