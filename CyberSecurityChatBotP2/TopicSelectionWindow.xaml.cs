@@ -19,9 +19,20 @@ namespace CyberSecurityChatBotP2
     /// </summary>
     public partial class TopicSelectionWindow : Window
     {
-        public TopicSelectionWindow()
+        public TopicSelectionWindow(string userName)
         {
             InitializeComponent();
+            WelcomeUserName.Text = $"Welcome, {userName}!";
+
+            //ASCII ART
+            AsciiArtHeader.Text =
+          @" ___      ___       __       ___  ___   __     ___      ___  ____  ____   ________  
+|""  \    /""  |     /""""\     |""  \/""  | |"" \   |""  \    /""  |(""  _||_ "" | /""       ) 
+ \   \  //   |    /    \     \   \  /  ||  |   \   \  //   ||   (  ) : |(:   \___/  
+ /\\  \/.    |   /' /\  \     \\  \/   |:  |   /\\  \/.    |(:  |  | . ) \___  \    
+|: \.        |  //  __'  \    /\.  \   |.  |  |: \.        | \\ \__/ //   __/  \\   
+|.  \    /:  | /   /  \\  \  /  \   \  /\  |\ |.  \    /:  | /\\ __ //\  /"" \   :)  
+|___|\__/|___|(___/    \___)|___/\___|(__\_|_)|___|\__/|___|(__________)(_______/   
+                                                        
         }
     }
-}
