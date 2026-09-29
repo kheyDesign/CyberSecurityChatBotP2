@@ -69,6 +69,11 @@ namespace CyberSecurityChatBotP2
                 return; // Exit the method if no name was entered
             }
 
+            TopicSelectionWindow topicWindow =
+                new TopicSelectionWindow(enteredName);
+
+            topicWindow.Show();
+            this.Close();
 
             // Welcome the user with a personalized message
             MessageBox.Show($"Hello, {enteredName}! Welcome to the Cyber Security ChatBot.\n \n" +
