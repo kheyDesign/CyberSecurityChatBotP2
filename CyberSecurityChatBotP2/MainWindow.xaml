@@ -15,7 +15,7 @@
     <Grid x:Name="WelcomeScreen" >
 
         <Border Background="#36454F"
-        BorderBrush="White"
+        BorderBrush="#688DA5"
         BorderThickness="2"
         CornerRadius="15"
         Height="500"
@@ -68,7 +68,7 @@
                                Margin="0,5,0,0"/>
 
                     <!-- Ask user for name. supports memory and bot remembering-->
-                    <TextBlock Text="Please enter your name:"
+                    <TextBlock Text="What is your name:"
                                Foreground="White"
                                FontSize="16"
                                TextWrapping="Wrap"
@@ -77,9 +77,12 @@
 
                     <!-- Lets user enter name -->
                     <TextBox x:Name="NameTextBox"
+                             
                              Height="30"
                              Width="300"
                              FontSize="16"
+                             Background="Transparent"
+                             BorderBrush="#688DA5"
                              HorizontalAlignment="Center"
                              Margin="0,0,0,15"/>
 

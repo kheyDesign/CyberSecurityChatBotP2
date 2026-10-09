@@ -1,0 +1,103 @@
+﻿<Window x:Class="CyberSecurityChatBotP2.ChatScreenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CyberSecurityChatBotP2"
+        mc:Ignorable="d"
+        Title="Maximus - Cyber Security Chat"  
+        Height="700" 
+        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#121212">
+
+    <Grid Margin="20">
+        <Border Background="#36454F"
+                BorderBrush="White"
+                BorderThickness="2"
+                CornerRadius="15"
+                Padding="15">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Header -->
+                <StackPanel Grid.Row="0" Margin="0,0,0,10">
+                    <TextBlock x:Name="ChatHeaderTitle"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="You are now connected"
+                               FontSize="14"
+                               Foreground="#87CEEB"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Chat History Window -->
+                <ListBox x:Name="ChatListBox"
+                         Grid.Row="1"
+                         Background="#2A3439"
+                         BorderBrush="#688DA5"
+                         BorderThickness="1"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         Margin="0,0,0,15">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="#3E4C59" 
+                                    CornerRadius="8" 
+                                    Padding="10" 
+                                    Margin="5"
+                                    MaxWidth="700">
+                                <TextBlock Text="{Binding}" 
+                                           Foreground="White" 
+                                           FontSize="14" 
+                                           TextWrapping="Wrap"/>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <!-- Footer / Input Area -->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox x:Name="MessageTextBox"
+                             Grid.Column="0"
+                             Height="40"
+                             FontSize="14"
+                             VerticalContentAlignment="Center"
+                             Background="White"
+                             Foreground="Black"
+                             BorderBrush="#688DA5"
+                             Margin="0,0,10,0"/>
+
+                    <Button x:Name="SendButton"
+                            Grid.Column="1"
+                            Content="Send"
+                            Height="40"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Click="SendButton_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="#7393B3" CornerRadius="5">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
