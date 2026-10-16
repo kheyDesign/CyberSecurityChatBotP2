@@ -19,8 +19,8 @@
         BorderThickness="2"
         CornerRadius="15"
         Height="500"
-        Width="450"
-        Margin="20,59,20,20">
+        Width="600"
+        Margin="20,20,20,20">
 
             <!-- Welcome screen Controls -->
         <StackPanel HorizontalAlignment="Center"

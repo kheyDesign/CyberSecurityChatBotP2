@@ -5,19 +5,19 @@ using System.Windows;
 
 
 //-------------------------------------------------------------------
-// Welcome screen for Maximus Cyber Security Assistant.
+//MainWindow class: Handles the initial launch, audio greeting
+//ASCII ART and capturing the users name.
 //-------------------------------------------------------------------
+
 namespace CyberSecurityChatBotP2
 {
-    // logic for MainWindow / Wellcome screen
-
     public partial class MainWindow : Window
     {
         //Store the user's name
         private string userName = "";
 
 
-        //Constructor
+        //Constructor: Runs automatically when the application starts.
         public MainWindow()
         {
             InitializeComponent();
@@ -34,31 +34,32 @@ namespace CyberSecurityChatBotP2
                                                                                     ";
 
 
-            //Play the welcome sound. When the App starts.
-            PlayWelcomeGreeting();
+         //Play the welcome sound. When the App starts.
+         PlayWelcomeGreeting();
         }
 
-        // Method to play the welcome sound
+        // Method to saftely play the welcome audio WAV file.
         private void PlayWelcomeGreeting()
         {
             try
             {
-                // Plays the chatbots greeting
+                // Loads and plays the chatbots WAV audio greeting.
                 SoundPlayer player = new SoundPlayer("maximus_greeting.wav");
                 player.Load();
                 player.Play();
             }
             catch (Exception ex)
             {
+                // Incase the audio file is missing so the application doesnt crash.
                 MessageBox.Show($"Error playing sound: {ex.Message}");
             }
         }
 
 
-        // Method to handle the button click event
+        // Event handler thats triggered when users click the Submit button.
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            // Get the name (text) entered by the user
+            // Get the name entered by the user and clean up extra whitespace.
             string enteredName = NameTextBox.Text.Trim().ToLower();
 
 
@@ -69,16 +70,19 @@ namespace CyberSecurityChatBotP2
                 return; // Exit the method if no name was entered
             }
 
+            //Saves the name to local 
+            userName = enteredName;
+
+
+            //Open the topic selection window and pass the users name forward.
             TopicSelectionWindow topicWindow =
                 new TopicSelectionWindow(enteredName);
+                topicWindow.Show();
 
-            topicWindow.Show();
+            //Closes the current window
             this.Close();
 
-            // Welcome the user with a personalized message
-            MessageBox.Show($"Hello, {enteredName}! Welcome to the Cyber Security ChatBot.\n \n" +
-             "I'm Maximus, your Cyber Security Assistant.\n\n" +
-             "Choose a cybersecurity topic below to get started.");
+  
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

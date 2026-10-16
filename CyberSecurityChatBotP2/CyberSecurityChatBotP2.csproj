@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\NewFolder\**" />
+    <EmbeddedResource Remove="Images\NewFolder\**" />
+    <None Remove="Images\NewFolder\**" />
+    <Page Remove="Images\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="maximus_greeting.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
