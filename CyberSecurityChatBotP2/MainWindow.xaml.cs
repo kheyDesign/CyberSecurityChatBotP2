@@ -6,14 +6,14 @@ using System.Windows;
 
 //-------------------------------------------------------------------
 //MainWindow class: Handles the initial launch, audio greeting
-//ASCII ART and capturing the users name.
+//ASCII ART and capturing the users name for personalization.
 //-------------------------------------------------------------------
 
 namespace CyberSecurityChatBotP2
 {
     public partial class MainWindow : Window
     {
-        //Store the user's name
+        //Store the user's name accross the a
         private string userName = "";
 
 
@@ -43,14 +43,14 @@ namespace CyberSecurityChatBotP2
         {
             try
             {
-                // Loads and plays the chatbots WAV audio greeting.
+                // Loads and plays the chatbots WAV audio greeting. 
                 SoundPlayer player = new SoundPlayer("maximus_greeting.wav");
                 player.Load();
                 player.Play();
             }
             catch (Exception ex)
             {
-                // Incase the audio file is missing so the application doesnt crash.
+                // Try-catch exception. Incase the audio file is missing so the application doesnt crash.
                 MessageBox.Show($"Error playing sound: {ex.Message}");
             }
         }
@@ -59,11 +59,11 @@ namespace CyberSecurityChatBotP2
         // Event handler thats triggered when users click the Submit button.
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            // Get the name entered by the user and clean up extra whitespace.
+            // Get/retrieve the name entered by the user and clean up extra whitespace.
             string enteredName = NameTextBox.Text.Trim().ToLower();
 
 
-            // Check if the user entered a name or left it blank
+            // Validation Check to see if the user entered a name or left it blank
             if (string.IsNullOrWhiteSpace(enteredName))
             {
                 MessageBox.Show("Please enter your name.");
