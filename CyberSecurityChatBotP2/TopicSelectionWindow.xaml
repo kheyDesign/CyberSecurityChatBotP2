@@ -15,17 +15,17 @@
     <Grid>
 
         <Border Background="#36454F"
- BorderBrush="#688DA5"
- BorderThickness="2"
- CornerRadius="15"
- Height="500"
- Width="600"
- Margin="20,20,20,20">
+                BorderBrush="#688DA5"
+                BorderThickness="2"
+                CornerRadius="15"
+                Height="500"
+                Width="600"
+                Margin="20,20,20,20">
 
 
             <Grid Margin="20">
                     
-<!--Header and content-->
+               <!--Header and content-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -44,23 +44,20 @@
 
                 <!-- Main Content -->
                 <Grid Grid.Row="1">
-
-             
+                    
+                    
                     <!--On the left will be a swg-->
                     <!--On the right will be welcome username-->
                     
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="180"/>
                     <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                 <!--Image -->
-                    <Border Grid.Column="0"
-                            Background="#36454F"
-                            CornerRadius="10"
-                            Margin="10">
+                    <Border >
                     <Grid>
-                        <Image Source="Images/Maximus.png" 
+                        <Image Source="/Images/Maximus.png" 
                                Width="150"
                                Height ="150"
                                Stretch="Uniform"
@@ -68,7 +65,7 @@
                                VerticalAlignment="Center"/>
                         </Grid>
                         
-                </Border>
+                     </Border>
                     
                     <!--Welcome name and content-->
                     <StackPanel Grid.Column="1"
@@ -78,7 +75,7 @@
                         <TextBlock x:Name="WelcomeUserName"
                                    FontSize="20"
                                    FontWeight="Bold"
-                                   Foreground="White"
+                                   Foreground="#688DA5"
                                    Margin="0,10"/>
 
                      <!-- Inro message-->
@@ -88,84 +85,213 @@
                                       Margin="0,5,0,0"/>
 
                         
-<!-- Instructions -->
+                        <!-- Instructions To user -->
                         <TextBlock Text="Select a topic you would like to learn about"
                                    FontSize="16"
                                    Foreground="White"
                                    TextWrapping="Wrap"
                                    Margin="0,10,0,25"/>
 
+
                         <!---The Topics-->
                         
-                        <!-- Buttons-->
+                        <!-- BUTTONS-->
                         
                         <UniformGrid Rows="2"
                                      Columns="3">
-                            <!-- Phishing-->
+                           
+                            
+                            
+                            <!-- PHISHING BUTTON -->
+                            <Button Background="#36454F" BorderBrush="#688DA5" Height="85" Margin="4" Click="PhishingButton_Click">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">  <!--To make boxes cornerRadius-->
+                                        <Border x:Name="border"
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
 
-                            <Button Content="Phishing"
-                                    Background="#36454F"
-                                    Foreground="White"
-                                BorderBrush="#688DA5"
-                                Height="90"
-                                Margin="10"
-                                FontSize="16"
-                                FontWeight="Bold"
-                                Click="PhishingButton_Click"/>
+                                        <!-- Trigger to change BorderBrush to SkyBlue on Hover -->
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#87CEEB"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                
+                                <!--The buttons content.-->
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image Source="/Images/Maximus Icons/Phishing.png" Width="20" Height="20" HorizontalAlignment="Center" Margin="0,0,0,3"/>
+                                    <TextBlock Text="Phishing" FontSize="13" FontWeight="Bold" Foreground="#688DA5" HorizontalAlignment="Center" TextAlignment="Center"/>
+                                    </StackPanel>
+                            </Button>
+                            
+                            
 
-                            <Button Content="Password"
-                                     Background="#36454F"
-                                    Foreground="White"
-                                    BorderBrush="#688DA5"
-         Height="90"
-         Margin="10"
-         FontSize="16"
-         FontWeight="Bold"
-         Click="PasswordButton_Click"/>
+                            <!-- PASSWORD BUTTON-->
+                            <Button Background="#36454F" BorderBrush="#688DA5" Height="85" Margin="4" Click="PasswordButton_Click">
+                                
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <!--To make boxes cornerRadius-->
+                                        <Border x:Name="border"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
 
+                                        <!-- Trigger to change BorderBrush to SkyBlue on Hover -->
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#87CEEB"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
 
-                            <Button Content="Links"
-                                     Background="#36454F"
-                                    BorderBrush="#688DA5"
- Foreground="White"
-         Height="90"
-         Margin="10"
-         FontSize="16"
-         FontWeight="Bold"
-         Click="LinksButton_Click"/>
-
-
-                            <Button Content="Malware"
-                                     Background="#36454F"
- Foreground="White"
-                                    BorderBrush="#688DA5"
-         Height="90"
-         Margin="10"
-         FontSize="16"
-         FontWeight="Bold"
-         Click="Malware_Click"/>
-
-
-                            <Button Content="Firewall"
-                                     Background="#36454F"
-                                    BorderBrush="#688DA5"
- Foreground="White"
-         Height="90"
-         Margin="10"
-         FontSize="16"
-         FontWeight="Bold"
-         Click="Firewall_Click"/>
+                                <!--The buttons content.-->
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image Source="/Images/Maximus Icons/Password.png" Width="18" Height="18" HorizontalAlignment="Center" Margin="0,0,0,3"/>
+                                    <TextBlock Text="Passwords" FontSize="13" FontWeight="Bold" Foreground="#688DA5" HorizontalAlignment="Center" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                                
 
 
-                            <Button Content="VPN"
-                                     Background="#36454F"
-                                    BorderBrush="#688DA5"
- Foreground="White"
-Height="90"
-Margin="10"
-FontSize="16"
-FontWeight="Bold"
-Click="VPN_Click"/>
+                            <!-- LINKS BUTTON  -->
+                            <Button Background="#36454F" BorderBrush="#688DA5" Height="85" Margin="4" Click="LinksButton_Click">
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <!--To make boxes cornerRadius-->
+                                        <Border x:Name="border"
+                                         Background="{TemplateBinding Background}"
+                                         BorderBrush="{TemplateBinding BorderBrush}"
+                                         BorderThickness="{TemplateBinding BorderThickness}"
+                                         CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+
+                                        <!-- Trigger to change BorderBrush to SkyBlue on Hover -->
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#87CEEB"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+
+                                <!--The buttons content.-->
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image Source="/Images/Maximus Icons/Links.png" Width="20" Height="20" HorizontalAlignment="Center" Margin="0,0,0,3"/>
+                                    <TextBlock Text="Links" FontSize="13" FontWeight="Bold" Foreground="#688DA5" HorizontalAlignment="Center" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+
+
+                            <!--MALWARE BUTTON-->
+
+                            <Button Background="#36454F" BorderBrush="#688DA5" Height="85" Margin="4" Click="Malware_Click">
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <!--To make boxes cornerRadius-->
+                                        <Border x:Name="border"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+
+                                        <!-- Trigger to change BorderBrush to SkyBlue on Hover -->
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#87CEEB"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+
+                                <!--The buttons content.-->
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image Source="/Images/Maximus Icons/Malware.png" Width="20" Height="20" HorizontalAlignment="Center" Margin="0,0,0,3"/>
+                                    <TextBlock Text="Malware" FontSize="13" FontWeight="Bold" Foreground="#688DA5" HorizontalAlignment="Center" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+
+                            
+                            <!--FIREWALL BUTTON-->
+
+                            <Button Background="#36454F" BorderBrush="#688DA5" Height="85" Margin="4" Click="Firewall_Click">
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <!--To make boxes cornerRadius-->
+                                        <Border x:Name="border"
+             Background="{TemplateBinding Background}"
+             BorderBrush="{TemplateBinding BorderBrush}"
+             BorderThickness="{TemplateBinding BorderThickness}"
+             CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+
+                                        <!-- Trigger to change BorderBrush to SkyBlue on Hover -->
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#87CEEB"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+
+                                <!--The buttons content.-->
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image Source="/Images/Maximus Icons/Firewall.png" Width="20" Height="20" HorizontalAlignment="Center" Margin="0,0,0,3"/>
+                                    <TextBlock Text="Firewall" FontSize="13" FontWeight="Bold" Foreground="#688DA5" HorizontalAlignment="Center" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+
+                            <!--VPN BUTTON-->
+
+                                <Button Background="#36454F" BorderBrush="#688DA5" Height="85" Margin="4" Click="VPN_Click">
+     
+                                     <Button.Template>
+                                          <ControlTemplate TargetType="Button">
+                                           <!--To make boxes cornerRadius-->
+                                               <Border x:Name="border"
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                           </Border>
+
+             <!-- Trigger to change BorderBrush to SkyBlue on Hover -->
+             <ControlTemplate.Triggers>
+                 <Trigger Property="IsMouseOver" Value="True">
+                     <Setter TargetName="border" Property="BorderBrush" Value="#87CEEB"/>
+                 </Trigger>
+             </ControlTemplate.Triggers>
+         </ControlTemplate>
+     </Button.Template>
+
+     <!--The buttons content.-->
+     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+         <Image Source="/Images/Maximus Icons/VPN.png" Width="20" Height="20" HorizontalAlignment="Center" Margin="0,0,0,3"/>
+         <TextBlock Text="VPN" FontSize="13" FontWeight="Bold" Foreground="#688DA5" HorizontalAlignment="Center" TextAlignment="Center"/>
+     </StackPanel>
+ </Button>
+                                
 
 
                         </UniformGrid>

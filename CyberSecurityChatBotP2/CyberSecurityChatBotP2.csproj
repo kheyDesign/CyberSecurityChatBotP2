@@ -16,6 +16,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\Maximus Icons\Firewall.png" />
+    <None Remove="Images\Maximus Icons\Links.png" />
+    <None Remove="Images\Maximus Icons\Malware.png" />
+    <None Remove="Images\Maximus Icons\Password.png" />
+    <None Remove="Images\Maximus Icons\Phishing.png" />
+    <None Remove="Images\Maximus Icons\VPN.png" />
+    <None Remove="Images\Maximus.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Maximus Icons\Firewall.png" />
+    <Resource Include="Images\Maximus Icons\Links.png" />
+    <Resource Include="Images\Maximus Icons\Malware.png" />
+    <Resource Include="Images\Maximus Icons\Password.png" />
+    <Resource Include="Images\Maximus Icons\Phishing.png" />
+    <Resource Include="Images\Maximus Icons\VPN.png" />
+    <Resource Include="Images\Maximus.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="maximus_greeting.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
