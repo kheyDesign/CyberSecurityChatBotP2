@@ -26,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Speech" Version="10.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\Maximus Icons\Firewall.png" />
     <Resource Include="Images\Maximus Icons\Links.png" />
     <Resource Include="Images\Maximus Icons\Malware.png" />
@@ -33,6 +37,12 @@
     <Resource Include="Images\Maximus Icons\Phishing.png" />
     <Resource Include="Images\Maximus Icons\VPN.png" />
     <Resource Include="Images\Maximus.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Window1.xaml.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
