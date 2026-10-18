@@ -41,12 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Window1.xaml.cs">
-      <Generator>MSBuild:Compile</Generator>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="maximus_greeting.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
