@@ -66,6 +66,12 @@ namespace CyberSecurityChatBotP2
             // Pass the user's input to the chat bot logic engine and get a response
             string botResponse = chatBotLogicEngine.GetResponse(userText, out string updatedFavoriteTopic);
             AddBotMessage(botResponse);
+
+            //Closes app
+            if (userText.ToLower() == "exit" || userText.ToLower() == "quit")
+            {
+                this.Close();
+            }
         }
 
         //Handles the processing of a topic query, simulating user input and invoking the chat logic engine.
